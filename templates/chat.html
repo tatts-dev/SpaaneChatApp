@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat - Spaane</title>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</head>
+<body>
+    <h2>Welcome, {{ username }}</h2>
+
+    <div>
+        <input type="text" id="username" value="{{ username }}" hidden />
+        <input type="text" id="room" placeholder="Room Name" />
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+
+    <div id="chat" style="display:none;">
+        <div id="messages" style="height: 200px; overflow-y: scroll; border: 1px solid #ccc; margin-top: 10px;"></div>
+        <input type="text" id="message" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</body>
+</html>
